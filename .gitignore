@@ -2,7 +2,13 @@
 *.txt
 
 __pycache__/
-Dataset/*
-PreparedData/*
 React/node_modules/
+
+Dataset/*
+!Dataset/.gitkeep
+
+PreparedData/*
+!PreparedData/.gitkeep
+
 TrainedModels/*
+!TrainedModels/.gitkeep
