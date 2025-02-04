@@ -1,0 +1,204 @@
+/* Set the font for the entire body */
+body {
+    font-family: "Gill Sans", sans-serif;
+    font-size: medium;
+    font-style: bold;
+    color: #000000; /* Dark gray text color */
+}
+
+#canvas-container {
+    margin: 0 auto; /* Center the container horizontally */
+    background-color: #632f2f; /* Light gray background */
+    border: 1px solid #462121; /* Light gray border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    z-index: 0;
+}
+
+/* Style for controls */
+#controls {
+    position: fixed;
+    left: 100px;
+    top: 10px;
+    z-index: 1;
+    font-family: "Gill Sans", sans-serif;
+    color: #333; /* Dark gray text color */
+    background-color: rgba(0, 87, 107, 0.492);
+    backdrop-filter: blur(1px); /* Adjust the blur radius as needed */
+    padding: 5px; /* Add some padding for visual spacing */
+    border-radius: 20px; /* Optional: rounded corners for aesthetics */
+    padding-left: 50px;
+    padding-right: 50px;
+    /* Add more styles specific to the controls section */
+}
+
+#controls label {
+    font-size: 12px; /* Adjust the font size as needed */
+    color: #333; /* Dark gray text color */
+}
+#controls select {
+    font-size: 12px; /* Adjust the font size as needed */
+    padding: 5px; /* Make the dropdowns taller for easier interaction */
+    border-radius: 50px; /* Optional: rounded corners for aesthetics */
+    border: 1px solid #ccc; /* Optional: add a border */
+    background-color: #e6d0d0e3;
+    cursor: pointer; /* Change cursor to pointer on hover */
+
+
+}
+select:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #0056b3; /* Change border color on focus */
+}
+
+#controls input,
+#controls button {
+    font-size: 12px; /* Adjust the font size as needed */
+    /* Add more styles specific to the elements in the controls section */
+}
+
+#controls button {
+    font-size: 12px; /* Adjust the font size as needed */
+    color: #e6d0d0e3; /* White text color */
+    background-color: #240a0ab3;
+    /* Add more styles specific to the buttons in the controls section */
+}
+
+
+#sidebar-container {
+    position: relative;
+    z-index: 2; /* Ensure the sidebar is above the canvas */
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3; /* Ensure the sidebar is above the controls */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 87, 107, 0.386); /* Adjust the alpha value for transparency */
+    backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+    overflow-x: hidden;
+    transition: 0.7s;
+    padding-top: 60px;
+}
+
+/* Style for labels and select elements */
+label, select {
+    font-size: 15px; /* Adjust the font size as needed */
+    color: #333; /* Dark gray text color */
+}
+
+/* Style for buttons */
+button {
+    font-size: 10px; /* Adjust the font size as needed */
+    color: #fff; /* White text color */
+    background-color: #007bff; /* Blue background color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#toggle-sidebar {
+    position: fixed;
+    top: 11px;
+    left: 10px;
+    font-size: 20px;
+    background-color: #240a0ab3; /* Adjust the alpha value for transparency */
+    backdrop-filter: blur(50px); /* Adjust the blur radius as needed */
+    color: e6d0d0e3(0, 87, 107, 0.386);
+    border: none;
+    cursor: pointer;
+    z-index: 4; /* Ensure the button is above the sidebar */
+}
+
+/* Add padding to the body to prevent overlap with the sidebar */
+body {
+    padding-left: 60px; /* Adjust as needed */
+}
+
+#synth-selection {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    gap: 10px; /* Add some space between each row */
+    padding: 10px; /* Add padding for visual spacing from the sidebar edges */
+}
+
+/* Optional: Style the labels and selects for better visibility and alignment */
+#synth-selection label, #synth-selection select {
+    width: 100%; /* Make them take full width of the sidebar */
+    margin-bottom: 10px; /* Optional: add some space below each item */
+}
+
+/* Style the selects to make them visually appealing */
+#synth-selection select {
+    padding: 5px; /* Make the dropdowns taller for easier interaction */
+    border-radius: 50px; /* Optional: rounded corners for aesthetics */
+    border: 1px solid #ccc; /* Optional: add a border */
+    background-color: #e6d0d0e3;
+}
+
+/* Style for input elements (e.g., range sliders) */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-attachment: relative;
+    background-color: #501a1ae3; /* Light gray background color */
+    color: #501a1ae3;
+    padding-left: -100px;
+}
+
+/* Style for range sliders */
+#controls input[type="range"] {
+    -webkit-appearance: none; /*Override default appearance
+    /* width: 100%; Full-width */
+    height: 10px; /* Specified height */
+    background: #e6d0d0e3; /* Background color for the track */
+    border-radius: 10px; /* Rounded corners */
+    outline: none; /* Remove outline */
+    opacity: 0.9; /* Set transparency (optional) */
+    -webkit-transition: .2s; /* Transition for smooth effect */
+    transition: opacity .2s;
+}
+
+/* Style for the slider thumb (for Webkit browsers) */
+#controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default appearance */
+    appearance: none;
+    width: 15px; /* Width of the thumb */
+    height: 15px; /* Height of the thumb */
+    background: #240a0ae9; /* Background color for the thumb */
+    opacity: 0.9; /* Set transparency (optional) */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; /* Rounded corners */
+}
+
+/* Style for the slider thumb (for Mozilla Firefox) */
+#controls input[type="range"]::-moz-range-thumb {
+    width: 15px; /* Width of the thumb */
+    height: 15px; /* Height of the thumb */
+    background: #240a0ab3; /* Background color for the thumb */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; /* Rounded corners */
+}
+
+/* Style for labels when the checkbox is unchecked */
+.toggle-label {
+    box-sizing: border-box;
+    transition: color 1s; /* Smooth transition */
+    background-color: #e6d0d0e3;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* Style for labels when the checkbox is checked */
+input[type="checkbox"]:checked + .toggle-label {
+    color: #241919; /* Darker color for "on" state */
+    /* background-color: #782727e3; */
+}

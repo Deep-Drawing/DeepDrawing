@@ -1,0 +1,8 @@
+# Ignore txt files
+*.txt
+
+__pycache__/
+Dataset/*
+PreparedData/*
+React/node_modules/
+TrainedModels/*
